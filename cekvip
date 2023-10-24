@@ -1,6 +1,6 @@
 <?php 
-$merchantCodes = "zDiC53mk";
-$apiKey = "klTn6UJrzRmv8uVz6olWEkw6p7FSjKkmyvpFEBQ64wBgt7QphK7X3GPJuk2cEnhc";
+$merchantCodes = "GBfvvQTJ";
+$apiKey = "42lZWnrkPE11h7QGVqtG4TIIX68RajsHc1eA692VGnskDK3fbtk6ZQU7Ap7qs58K";
 $signe = $merchantCodes.$apiKey;
         $sign = md5($signe);
         $curl = curl_init();
