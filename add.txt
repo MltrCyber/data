@@ -1,0 +1,78 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Waktu pembuatan: 24 Okt 2023 pada 10.43
+-- Versi server: 10.6.15-MariaDB
+-- Versi PHP: 8.1.16
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `haryitxyz_game`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_user`
+--
+
+CREATE TABLE `tb_user` (
+  `cuid` int(11) NOT NULL,
+  `user` text NOT NULL,
+  `pass` varchar(100) NOT NULL,
+  `token_id` int(11) DEFAULT NULL,
+  `image` varchar(255) NOT NULL DEFAULT 'avatar5.png',
+  `full_name` text NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `no_hp` text NOT NULL,
+  `level` text NOT NULL,
+  `pinTrx` varchar(255) NOT NULL,
+  `reff` int(11) NOT NULL,
+  `uplineID` int(11) NOT NULL,
+  `join_date` datetime NOT NULL,
+  `last_login` datetime NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 0
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci ROW_FORMAT=DYNAMIC;
+
+--
+-- Dumping data untuk tabel `tb_user`
+--
+
+INSERT INTO `tb_user` (`cuid`, `user`, `pass`, `token_id`, `image`, `full_name`, `email`, `no_hp`, `level`, `pinTrx`, `reff`, `uplineID`, `join_date`, `last_login`, `status`) VALUES
+(5, 'jokowi', '$2y$10$OVRTFcwKLk13TqInDOTIDOklEEUNwCoNp0M6ilQaTvZeJgtLwOXvG', 21, 'avatar5.png', '', '', '', 'superadmin', 'd41d8cd98f00b204e9800998ecf8427e', 0, 1, '2023-10-23 06:07:26', '2023-10-24 10:36:25', 1);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indeks untuk tabel `tb_user`
+--
+ALTER TABLE `tb_user`
+  ADD PRIMARY KEY (`cuid`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
+--
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_user`
+--
+ALTER TABLE `tb_user`
+  MODIFY `cuid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
