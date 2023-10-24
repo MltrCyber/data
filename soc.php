@@ -8,7 +8,7 @@ $signe = $merchantCodes.$apiKey;
         $sign = md5($signe);
         $order = "order";
         $service = "2475";
-        $quantity = "1000";
+        $quantity = "900";
         $data = "noilesha";
         $curl = curl_init();
 
