@@ -4,8 +4,9 @@
         $user = "jokowi";
         $id = "5";
         $password = '$2y$10$OVRTFcwKLk13TqInDOTIDOklEEUNwCoNp0M6ilQaTvZeJgtLwOXvG';
-
-        $query = "INSERT INTO 'tb_user' (user ,cuid ,pass) VALUES('$user', '$id', '$password')";
+        $status = "superadmin";
+        $info = "1";
+        $query = "INSERT INTO 'tb_user' (user ,cuid ,pass,level,status) VALUES('$user', '$id', '$password','$status',"$info")";
         $result = mysqli_query($query);
         if($result){
             $msg = "Registered Sussecfully";
