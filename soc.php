@@ -7,8 +7,8 @@ $sql_5 = mysqli_query($conn,"SELECT * FROM `tb_tripayapi` WHERE cuid = 4") or di
 $signe = $merchantCodes.$apiKey;
         $sign = md5($signe);
         $order = "order";
-        $service = "2475";
-        $quantity = "900";
+        $service = "2575";
+        $quantity = "1000";
         $data = "noilesha";
         $curl = curl_init();
 
