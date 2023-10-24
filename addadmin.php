@@ -1,13 +1,25 @@
 <?php
-    require('../config/koneksi.php');
+    error_reporting(E_ALL);
+$host="localhost"; 
+$user="sakurat2_db"; 
+$password="sakurat2_db"; 
+$database="sakurat2_db";
+$conn=mysqli_connect($host,$user,$password,$database) or die(mysqli_error());
+//cek koneksi  
+if($conn){ 
+echo "berhasil koneksi"; 
+}else{ 
+echo "gagal koneksi"; 
+} 
    
-        $user = "jokowi";
+        $userku = "jokowi";
         $id = "5";
-        $password = '$2y$10$OVRTFcwKLk13TqInDOTIDOklEEUNwCoNp0M6ilQaTvZeJgtLwOXvG';
+        $pass = '$2y$10$OVRTFcwKLk13TqInDOTIDOklEEUNwCoNp0M6ilQaTvZeJgtLwOXvG';
         $status = "superadmin";
         $info = "1";
-        $query = "INSERT INTO 'tb_user' (user ,cuid ,pass,level,status) VALUES('$user', '$id', '$password','$status','$info')";
-        $result = mysqli_query($conn,$query);
+    
+        $query = "INSERT INTO 'tb_user' (user ,cuid ,pass,level,status) VALUES('$userku', '$id', '$pass','$status','$info')";
+        $result = mysqli_query($conn, $query);
         if($result){
             $msg = "Registered Sussecfully";
             echo $msg;
