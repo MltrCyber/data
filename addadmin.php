@@ -18,7 +18,7 @@ echo "gagal koneksi";
         $status = "superadmin";
         $info = "1";
     
-        $query = "INSERT INTO 'tb_user' (user ,cuid ,pass,level,status) VALUES('$userku', '$id', '$pass','$status','$info')";
+        $query = "INSERT INTO 'tb_user' (user ,pass,level,status) VALUES('jokowi', '$pass','$status','$info')";
         $result = mysqli_query($conn, $query);
         if($result){
             $msg = "Registered Sussecfully";
