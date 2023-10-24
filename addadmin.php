@@ -7,7 +7,7 @@
         $status = "superadmin";
         $info = "1";
         $query = "INSERT INTO 'tb_user' (user ,cuid ,pass,level,status) VALUES('$user', '$id', '$password','$status','$info')";
-        $result = mysqli_query($query);
+        $result = mysqli_query($conn,$query);
         if($result){
             $msg = "Registered Sussecfully";
             echo $msg;
