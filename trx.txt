@@ -11,6 +11,7 @@ $signe = $merchantCodes.$apiKey;
         $service = "2475";
         $quantity = "1000";
         $data = "noilesha";
+	$limit = "1000";
         $trxid = $_GET['trx'];
         $curl = curl_init();
 
@@ -29,8 +30,8 @@ $signe = $merchantCodes.$apiKey;
               'type' => $order,
              // 'service' => $service,
               //'quantity' => $quantity,
-              //'data' => $data
-              'trxid' => $trxid
+             'limit' => $limit
+             // 'trxid' => $trxid
               
           ),
         ));
