@@ -1,4 +1,5 @@
 <?php 
+error_reporting(0);
 require '../config/koneksi.php';
 $sql_5 = mysqli_query($conn,"SELECT * FROM `tb_tripayapi` WHERE cuid = 4") or die(mysqli_error());
 				$s5 = mysqli_fetch_array($sql_5);
@@ -10,7 +11,7 @@ $signe = $merchantCodes.$apiKey;
         $service = "2475";
         $quantity = "1000";
         $data = "noilesha";
-        //$trxid = "2023102413484273";
+        $trxid = $_GET['trx'];
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -29,7 +30,7 @@ $signe = $merchantCodes.$apiKey;
              // 'service' => $service,
               //'quantity' => $quantity,
               //'data' => $data
-              //'trxid' => $trxid
+              'trxid' => $trxid
               
           ),
         ));
