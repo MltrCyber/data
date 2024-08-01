@@ -164,7 +164,7 @@ html {
     --destructive: 0 84.24% 60.2%; 
     --border: 240 5.26% 26.08%; 
     --radius: 0.5rem; 
-    --gradient-theme: linear-gradient(to bottom right, #525468 0%, #18181b 50%, #09090b 100%);
+    
 } 
 
 .flex-row { 
