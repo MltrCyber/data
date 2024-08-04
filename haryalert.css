@@ -181,6 +181,21 @@ html {
   }  
 
 } 
+ @keyframes show-hide {
+    0% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  .hide-after-5s {
+    animation: show-hide 5s forwards;
+  }
 /* These were inline style tags. Uses id+class to override almost everything */
 #style-ZcpFS.style-ZcpFS {  
    animation: 0.35s cubic-bezier(0.21, 1.02, 0.73, 1) 0s 1 normal forwards running go3223188581;  
